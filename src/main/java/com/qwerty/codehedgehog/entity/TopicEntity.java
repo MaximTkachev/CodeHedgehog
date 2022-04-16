@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "topics")
-public class Topic {
+public class TopicEntity {
     @Id
     @Column
     private String id;
@@ -22,11 +22,11 @@ public class Topic {
 
     @ManyToOne
     @JoinColumn(name = "parent_topic", referencedColumnName = "id")
-    private Topic parentTopic;
+    private TopicEntity parentTopic;
 
     @OneToMany(mappedBy = "parentTopic", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Topic> childTopics;
+    private List<TopicEntity> childTopics;
 
     @OneToMany(mappedBy = "topic", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Task> tasks;
+    private List<TaskEntity> tasks;
 }

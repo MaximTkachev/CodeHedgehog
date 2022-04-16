@@ -11,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "solutions")
-public class Solution {
+public class SolutionEntity {
     @Id
     @Column
     private String id;
@@ -29,9 +29,9 @@ public class Solution {
 
     @ManyToOne
     @JoinColumn(name = "author_id", referencedColumnName = "id")
-    private User author;
+    private UserEntity author;
 
     @ManyToOne
     @JoinColumn(name = "task_id", referencedColumnName = "id")
-    private Task task;
+    private TaskEntity task;
 }

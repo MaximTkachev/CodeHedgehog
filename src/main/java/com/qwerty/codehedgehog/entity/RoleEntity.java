@@ -4,28 +4,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "users")
-public class User {
+@Table(name = "roles")
+public class RoleEntity {
     @Id
-    @Column
+    @Column()
     private String id;
 
     @Column(nullable = false, unique = true)
-    private String username;
-
-    @ManyToOne
-    @JoinColumn(name = "role_id", referencedColumnName = "id")
-    private Role roleId;
-
-    @Column()
     private String name;
-
-    @Column
-    private String surname;
 }

@@ -11,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "tasks")
-public class Task {
+public class TaskEntity {
     @Id
     @Column
     private String id;
@@ -21,7 +21,7 @@ public class Task {
 
     @ManyToOne
     @JoinColumn(name = "topic_id", referencedColumnName = "id")
-    private Topic topic;
+    private TopicEntity topic;
 
     @Column
     private String description;
