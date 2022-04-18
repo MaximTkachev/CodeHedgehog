@@ -19,6 +19,9 @@ public class UserEntity {
     @Column(nullable = false, unique = true)
     private String username;
 
+    @Column(nullable = false)
+    private String password;
+
     @ManyToOne
     @JoinColumn(name = "role_id", referencedColumnName = "id")
     private RoleEntity roleId;
