@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -31,4 +32,8 @@ public class TaskEntity {
 
     @Column
     private Boolean isDraft;
+
+    @OneToMany(mappedBy = "task", fetch = FetchType.LAZY,
+        cascade = CascadeType.ALL)
+    private List<SampleSolutionEntity> examples;
 }
