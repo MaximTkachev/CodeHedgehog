@@ -5,6 +5,7 @@ import com.qwerty.codehedgehog.dto.Task.TaskDto;
 import com.qwerty.codehedgehog.entity.TaskEntity;
 import com.qwerty.codehedgehog.entity.TopicEntity;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 public class TaskConverter {
@@ -32,7 +33,8 @@ public class TaskConverter {
                 topic,
                 createTaskDto.getDescription(),
                 createTaskDto.getPrice(),
-                false
+                false,
+                new ArrayList<>()
         );
     }
 }
